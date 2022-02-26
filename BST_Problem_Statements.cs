@@ -9,6 +9,8 @@ namespace Binary_Search_Trees
     internal class BST_Problem_Statements<T>
     {
         public BST<T> rootNode;
+        int leftTreeCounter = 0;
+        int rightTreeCounter = 0;
 
         //For inserting the node in Binary Tree.
         public void Insert(T data)
@@ -30,6 +32,7 @@ namespace Binary_Search_Trees
                         if (temp.right == null)
                         {
                             temp.right = node;
+                            rightTreeCounter++;
                             Console.WriteLine($"{node.data} is added to right side of {temp.data}");
                             break;
                         }
@@ -37,9 +40,10 @@ namespace Binary_Search_Trees
                     }
                     else
                     {
-                        if(temp.left == null)
+                        if (temp.left == null)
                         {
                             temp.left = node;
+                            leftTreeCounter++;
                             Console.WriteLine($"{node.data} is added to left side of {temp.data}");
                             break;
                         }
@@ -47,6 +51,11 @@ namespace Binary_Search_Trees
                     }
                 }
             }
+        }
+        //For calculating the size of Binary Tree.
+        public void size()
+        {
+            Console.WriteLine($"The size of Binary tree is {leftTreeCounter + rightTreeCounter + 1}");
         }
     }
 }
