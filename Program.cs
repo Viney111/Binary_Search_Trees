@@ -25,6 +25,9 @@ namespace Binary_Search_Trees
             bst.Insert(63);
             bst.Insert(67);
             bst.size();
+            //Searching the element in the Binary Tree.
+            bst.Search(63);
+            bst.Search(69);
         }
     }
 }

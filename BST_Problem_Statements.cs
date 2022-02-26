@@ -12,6 +12,46 @@ namespace Binary_Search_Trees
         int leftTreeCounter = 0;
         int rightTreeCounter = 0;
 
+        // For searching a Node in Binary Tree.
+        public void Search(T data)
+        {
+            if (rootNode == null)
+            {
+                Console.WriteLine("Binary Tree is not available");
+            }
+            else
+            {
+                BST<T> temp = rootNode;
+                bool ifFound = false;
+                while(temp.left != null || temp.right != null)
+                {
+                    if (Comparer<T>.Default.Compare(temp.data, data) < 1)
+                    {
+                        if (temp.right.data.Equals(data))
+                        {
+                            Console.WriteLine($"{data} is found at below right of {temp.data} in the Binary Tree");
+                            ifFound = true;
+                            break;
+                        }
+                        temp = temp.right;
+                    }
+                    else
+                    {
+                        if (temp.left.data.Equals(data))
+                        {
+                            Console.WriteLine($"{data} is found at below left of {temp.data} in the Binary Tree");
+                            ifFound =true;
+                            break;
+                        }
+                        temp = temp.left;
+                    }
+                }
+                if (ifFound == false)
+                {
+                    Console.WriteLine($"{data} is not available in this binary tree");
+                }
+            }
+        }
         //For inserting the node in Binary Tree.
         public void Insert(T data)
         {
