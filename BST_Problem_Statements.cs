@@ -10,6 +10,7 @@ namespace Binary_Search_Trees
     {
         public BST<T> rootNode;
 
+        //For inserting the node in Binary Tree.
         public void Insert(T data)
         {
             BST<T> node = new BST<T>(data);

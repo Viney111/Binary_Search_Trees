@@ -10,6 +10,7 @@ namespace Binary_Search_Trees
         static void Main(string[] args)
         {
             BST_Problem_Statements<int> bst = new BST_Problem_Statements<int>();
+            //Inserting elements in binary tree.
             bst.Insert(56);
             bst.Insert(30);
             bst.Insert(70);
